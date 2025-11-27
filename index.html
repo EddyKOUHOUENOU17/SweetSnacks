@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SweetSnacks - Pâtisserie </title>
+    <title>The SweetSnacks - Pâtisserie Artisanale</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -15,26 +15,31 @@
             color: #333;
         }
 
-        /* HEADER */
+        /* ---------------- HEADER ---------------- */
         header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            justify-content: space-between;
+            padding: 20px 35px;
             background: #ffd9e8;
             position: sticky;
             top: 0;
             z-index: 10;
         }
 
-        .logo {
+        .logo-text {
             font-size: 1.8rem;
             font-weight: 600;
             color: #d95f8d;
         }
 
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 25px;
             text-decoration: none;
             color: #444;
             font-weight: 500;
@@ -44,7 +49,13 @@
             color: #d95f8d;
         }
 
-        /* HERO */
+        .logo-img {
+            height: 95px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* ---------------- HERO ---------------- */
         .hero {
             height: 70vh;
             background: url("https://images.unsplash.com/photo-1499636136210-6f4ee915583e") center/cover;
@@ -66,11 +77,6 @@
             color: #c94e7c;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-        }
-
         .btn {
             background-color: #d95f8d;
             color: #fff;
@@ -82,11 +88,7 @@
             display: inline-block;
         }
 
-        .btn:hover {
-            background-color: #c94e7c;
-        }
-
-        /* CATALOGUE */
+        /* ---------------- CATALOGUE ---------------- */
         .catalogue {
             padding: 70px 40px;
             text-align: center;
@@ -94,8 +96,8 @@
 
         .catalogue h2 {
             color: #d95f8d;
-            margin-bottom: 40px;
             font-size: 2.2rem;
+            margin-bottom: 40px;
         }
 
         .grid {
@@ -108,7 +110,7 @@
             background: #ffe6f1;
             padding: 20px;
             border-radius: 15px;
-            transition: transform 0.2s;
+            transition: 0.2s;
         }
 
         .item:hover {
@@ -118,11 +120,6 @@
         .item img {
             width: 100%;
             border-radius: 12px;
-        }
-
-        .item h3 {
-            margin-top: 15px;
-            color: #c94e7c;
         }
 
         .add-btn {
@@ -135,7 +132,7 @@
             border: none;
         }
 
-        /* PANIER */
+        /* ---------------- PANIER PREMIUM ---------------- */
         #cart {
             position: fixed;
             bottom: 20px;
@@ -143,38 +140,54 @@
             background: #ffd9e8;
             padding: 20px;
             border-radius: 15px;
-            width: 250px;
+            width: 280px;
             box-shadow: 0 0 10px #d6a3b3;
         }
 
         #cart h3 {
             margin-top: 0;
             color: #c94e7c;
-        }
-
-        #cart ul {
-            padding-left: 18px;
-            text-align: left;
-        }
-
-        #cart button {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* ABOUT */
-        .about {
-            padding: 60px 40px;
             text-align: center;
-            background: #ffd9e8;
         }
 
-        .about h2 {
-            color: #d95f8d;
-            margin-bottom: 20px;
+        #cart-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
         }
 
-        /* FOOTER */
+        .qty-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .qty-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: none;
+            background: #d95f8d;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .remove-btn {
+            background: transparent;
+            border: none;
+            color: #c94e7c;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #cart-total {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* ---------------- FOOTER ---------------- */
         footer {
             background: #c94e7c;
             color: #fff;
@@ -185,233 +198,181 @@
 
         footer a {
             color: #fff;
-            text-decoration: underline;
         }
-        /* --- Responsive simple --- */
-
-/* Tablettes & téléphones larges */
-@media (max-width: 992px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    nav a {
-        margin-left: 15px;
-        font-size: 0.9rem;
-    }
-
-    .hero-content {
-        padding: 25px;
-    }
-}
-
-/* Mobiles : < 768px */
-@media (max-width: 768px) {
-
-    /* Hero */
-    .hero {
-        height: 55vh;
-        padding: 10px;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero p {
-        font-size: 1rem;
-    }
-
-    /* Catalogue */
-    .catalogue {
-        padding: 40px 20px;
-    }
-    .grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-    .item {
-        padding: 15px;
-    }
-
-    /* Panier */
-    #cart {
-        width: 180px;
-        padding: 15px;
-        bottom: 15px;
-        right: 15px;
-    }
-    #cart h3 {
-        font-size: 1rem;
-    }
-    #cart ul {
-        font-size: 0.85rem;
-    }
-    #order-btn {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
-}
-
-/* Petits téléphones : < 480px */
-@media (max-width: 480px) {
-
-    header nav {
-        display: none; /* On garde seulement le logo */
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    /* Hero */
-    .hero {
-        height: 45vh;
-    }
-    .hero-content {
-        padding: 15px;
-        border-radius: 10px;
-    }
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    /* Catalogue : 1 colonne */
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Panier petit format */
-    #cart {
-        width: 160px;
-        padding: 12px;
-        bottom: 10px;
-        right: 10px;
-    }
-    #cart h3 {
-        font-size: 0.9rem;
-    }
-}
 
     </style>
-    
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">SweetSnacks</div>
-        <nav>
-            <a href="#catalogue">Catalogue</a>
-            <a href="#about">À propos</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo-text">The Sweet Snacks</div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Délicieuses pâtisseries faites maison</h1>
-            <p>Découvrez nos créations artisanales, fraîches et préparées avec amour.</p>
-            <a href="#catalogue" class="btn">Voir le catalogue</a>
-        </div>
-    </section>
+    <nav>
+        <a href="#catalogue">Snacks Sucrés</a>
+        <a href="#snacks-salés">Snacks Salés</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <!-- CATALOGUE -->
-    <section id="catalogue" class="catalogue">
-        <h2>Notre catalogue</h2>
-        <div class="grid">
-            <div class="item">
-                <img src="/Brownies.webp" alt="Brownie">
-                <h3>Brownies</h3>
-                <button class="add-btn" data-name="Brownies">Ajouter</button>
-            </div>
+    <img src="./tss.jpeg" class="logo-img">
+</header>
 
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40" alt="Macarons">
-                <h3>Macarons</h3>
-                <button class="add-btn" data-name="Macaron">Ajouter</button>
-            </div>
-
-            <div class="item">
-                <img src="/crêpes.webp" alt="Tartes">
-                <h3>Crêpes</h3>
-                <button class="add-btn" data-name="Crêpe">Ajouter</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- PANIER -->
-    <div id="cart">
-        <h3>🛒 Panier</h3>
-        <ul id="cart-list"></ul>
-        <button class="btn" id="order-btn">Commander</button>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Délicieuses pâtisseries faites maison</h1>
+        <a href="#catalogue" class="btn">Voir le catalogue</a>
     </div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <h2>À propos</h2>
-        <p>SweetSnacks est une petite pâtisserie artisanale passionnée par les saveurs authentiques.</p>
-    </section>
+<!-- ========= CATALOGUE SUCRÉ ========= -->
+<section id="catalogue" class="catalogue">
+    <h2>Snacks Sucrés</h2>
 
-    <!-- FOOTER -->
-    <footer id="contact">
-        <p>📍 FECECAM-Bénin, Calavi</p>
-        <p>📞 01 64 60 36 16</p>
+    <div class="grid">
+        <div class="item">
+            <img src="./tiramisu.jpeg">
+            <h3>Tiramisu – 1500 FCFA</h3>
+            <button class="add-btn" data-name="Tiramisu" data-price="1500">Ajouter</button>
+        </div>
 
-        <p>
-            💬 
-            <a href="https://wa.me/2290164603616" target="_blank">
-                Nous écrire sur WhatsApp
-            </a>
-        </p>
+        <div class="item">
+            <img src="./crêpes.webp">
+            <h3>Crêpes – 1000 FCFA</h3>
+            <button class="add-btn" data-name="Crêpes" data-price="1000">Ajouter</button>
+        </div>
 
-        <p>© 2025 SweetSnacks - Tous droits réservés</p>
-    </footer>
+        <div class="item">
+            <img src="./mousse.jpeg">
+            <h3>Mousse au Chocolat – 1200 FCFA</h3>
+            <button class="add-btn" data-name="Mousse au Chocolat" data-price="1200">Ajouter</button>
+        </div>
+    </div>
+</section>
 
-    <!-- SCRIPT PANIER + WHATSAPP -->
-    <script>
-        let cart = [];
+<!-- ========= SNACKS SALÉS ========= -->
+<section id="snacks-salés" class="catalogue">
+    <h2>Snacks Salés</h2>
 
-        // Ajout au panier
-        document.querySelectorAll(".add-btn").forEach(button => {
-            button.addEventListener("click", () => {
-                const product = button.dataset.name;
-                cart.push(product);
-                updateCart();
-            });
-        });
+    <div class="grid">
 
-        // Mise à jour visuelle
-        function updateCart() {
-            const list = document.getElementById("cart-list");
-            list.innerHTML = "";
+        <div class="item">
+            <img src="./crêpe.jpeg">
+            <h3>Crêpes – 1000 FCFA</h3>
+            <button class="add-btn" data-name="Crêpes" data-price="1000">Ajouter</button>
+        </div>
 
-            cart.forEach(item => {
-                const li = document.createElement("li");
-                li.textContent = item;
-                list.appendChild(li);
-            });
+        <div class="item">
+            <img src="./mini.webp">
+            <h3>Mini-Pizzas – 1200 FCFA</h3>
+            <button class="add-btn" data-name="Croissants au Jambon" data-price="1200">Ajouter</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e">
+            <h3>Feuilletés Fromage – 800 FCFA</h3>
+            <button class="add-btn" data-name="Feuilletés Fromage" data-price="800">Ajouter</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========= PANIER PREMIUM ========= -->
+<div id="cart">
+    <h3>🛒 Panier</h3>
+    <ul id="cart-list"></ul>
+    <div id="cart-total">Total : 0 FCFA</div>
+    <button class="btn" id="order-btn">Commander</button>
+</div>
+
+<!-- ========= FOOTER ========= -->
+<footer id="contact">
+    <p>📍 Calavi, Bénin</p>
+    <p>📞 01 67 60 44 47</p>
+
+    <a href="https://wa.me/2290167604447">Nous écrire sur WhatsApp</a>
+
+    <p>© 2025 The Sweet Snacks</p>
+</footer>
+
+<!-- ========= SCRIPT PREMIUM ========= -->
+<script>
+let cart = {};
+
+document.querySelectorAll(".add-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        let name = btn.dataset.name;
+        let price = parseInt(btn.dataset.price);
+
+        if (!cart[name]) {
+            cart[name] = { qty: 1, price: price };
+        } else {
+            cart[name].qty++;
         }
 
-        // Commander → WhatsApp
-        document.getElementById("order-btn").addEventListener("click", () => {
-            if (cart.length === 0) {
-                alert("Votre panier est vide !");
-                return;
-            }
+        updateCart();
+    });
+});
 
-            const message = encodeURIComponent(
-                "Bonjour SweetSnacks ! Je souhaite commander :\n- " + cart.join("\n- ")
-            );
+function updateCart() {
+    const list = document.getElementById("cart-list");
+    list.innerHTML = "";
+    let total = 0;
 
-            const whatsappNumber = "2290164603616"; 
-            const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+    for (let item in cart) {
+        let li = document.createElement("li");
 
-            window.open(url, "_blank");
-        });
-    </script>
+        li.innerHTML = `
+            ${item}  
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty('${item}', -1)">–</button>
+                ${cart[item].qty}
+                <button class="qty-btn" onclick="changeQty('${item}', 1)">+</button>
+                <button class="remove-btn" onclick="removeItem('${item}')">✖</button>
+            </div>
+        `;
+
+        total += cart[item].qty * cart[item].price;
+        list.appendChild(li);
+    }
+
+    document.getElementById("cart-total").innerText = `Total : ${total} FCFA`;
+}
+
+function changeQty(item, value) {
+    cart[item].qty += value;
+    if (cart[item].qty <= 0) delete cart[item];
+    updateCart();
+}
+
+function removeItem(item) {
+    delete cart[item];
+    updateCart();
+}
+
+document.getElementById("order-btn").addEventListener("click", () => {
+    if (Object.keys(cart).length === 0) {
+        alert("Votre panier est vide !");
+        return;
+    }
+
+    let message = "Bonjour ! Je souhaite commander :\n\n";
+    let total = 0;
+
+    for (let item in cart) {
+        let qty = cart[item].qty;
+        let price = cart[item].price;
+        let subtotal = qty * price;
+        total += subtotal;
+        message += `- ${item} × ${qty} = ${subtotal} FCFA\n`;
+    }
+
+    message += `\nTOTAL : ${total} FCFA`;
+
+    window.open(
+        `https://wa.me/2290167604447?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+});
+</script>
 
 </body>
 </html>
