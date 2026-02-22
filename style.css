@@ -112,11 +112,62 @@ body {
     border-radius: 50px; font-weight: bold; cursor: pointer; width: 90%; max-width: 400px;
 }
 
-/* --- CONTACT --- */
-.contact-section { padding: 60px 20px; background: white; }
-.contact-container { 
-    max-width: 1000px; margin: 0 auto; display: flex; 
-    flex-wrap: wrap; justify-content: center; gap: 40px; 
+/* Style de l'encadré de contact */
+.contact-box {
+    background-color: #fdf0f5; /* Rose très pâle pour le fond */
+    border-radius: 20px;       /* Coins bien arrondis pour la douceur */
+    padding: 30px 20px;
+    margin: 30px auto;
+    max-width: 400px;          /* Largeur adaptée au mobile */
+    text-align: center;
+    border: 1px solid rgba(233, 90, 139, 0.1); /* Bordure très discrète */
+}
+
+/* Style du titre dans l'encadré */
+.contact-box h3 {
+    margin: 0 0 10px 0;
+    color: #5d342d;            /* Marron chocolat */
+    font-size: 1.2rem;
+}
+
+/* Style du texte descriptif */
+.contact-box p {
+    margin: 0 0 15px 0;
+    color: #5d342d;
+    font-size: 0.95rem;
+}
+
+/* --- LE LIEN CORRIGÉ (Plus de bleu !) --- */
+.whatsapp-link {
+    color: #e95a8b;            /* Rose fuchsia du logo */
+    text-decoration: none;     /* Supprime le soulignement */
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol du lien */
+.whatsapp-link:hover {
+    color: #5d342d;            /* Devient marron au survol */
+    transform: translateY(-2px); /* Petit saut vers le haut */
+}
+
+/* Petit trait décoratif sous le lien */
+.whatsapp-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #5d342d;
+    transition: width .3s;
+}
+
+.whatsapp-link:hover::after {
+    width: 100%;
+}
 }
 
 .contact-cta { background: var(--soft-pink); padding: 30px; border-radius: 25px; text-align: center; }
@@ -124,3 +175,4 @@ body {
 /* --- FOOTER --- */
 .footer-bottom { padding: 40px 0; text-align: center; }
 .footer-logo { height: 60px; }
+
