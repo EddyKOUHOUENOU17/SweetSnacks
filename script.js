@@ -26,7 +26,7 @@ function changeQty(btn, delta) {
 
 // WhatsApp
 function sendWhatsApp() {
-    const phoneNumber = "33600000000"; // Ton numéro
+    const phoneNumber = "0164603616"; // Ton numéro
     let message = "Bonjour The Sweet Snacks ! ✨\nVoici ma commande :\n\n";
     let total = 0;
     let hasItems = false;
@@ -49,5 +49,6 @@ function sendWhatsApp() {
     }
 
     message += `\n💰 Total : ${total.toFixed(2)}€`;
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/${0164603616}?text=${encodeURIComponent(message)}`, '_blank');
 }
+
