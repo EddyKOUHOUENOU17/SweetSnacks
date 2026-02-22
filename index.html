@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Sweet Snacks - Gourmandises Maison</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -14,10 +14,15 @@
             <a href="#" class="logo-wrapper">
                 <img src="mini_logo.png" alt="The Sweet Snacks" class="nav-logo">
             </a>
-            <nav>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#menu">La Carte</a></li>
-                    <li><a href="#newsletter">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><a href="#menu" class="btn-nav">Commander</a></li>
                 </ul>
             </nav>
@@ -89,34 +94,31 @@
             </button>
         </div>
     </section>
+
     <section class="contact-section" id="contact">
-    <h2 class="section-title"><span>● ●</span> Contact & Infos <span>● ●</span></h2>
-    
-    <div class="contact-container">
-        <div class="contact-info">
-            <h3>Horaires de Douceur</h3>
-            <p><i class="far fa-clock"></i> Lun - Sam : 10h00 - 19h00</p>
-            <p><i class="far fa-clock"></i> Dimanche : Sur commande uniquement</p>
-            
-            <h3 style="margin-top: 30px;">Localisation</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Disponible en livraison sur Cotonou et Calavi </p>
-            
-            <div class="social-links-contact">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+        <h2 class="section-title"><span>● ●</span> Contact & Infos <span>● ●</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Horaires de Douceur</h3>
+                <p><i class="far fa-clock"></i> Lun - Sam : 10h00 - 19h00</p>
+                <p><i class="far fa-clock"></i> Dimanche : Sur commande</p>
+                <h3 style="margin-top: 30px;">Localisation</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Cotonou et Calavi</p>
+                <div class="social-links-contact">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="contact-cta">
+                <h3>Une question ?</h3>
+                <p>Besoin d'une commande personnalisée ?</p>
+                <a href="https://wa.me/33600000000" class="btn-contact-ws">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Direct
+                </a>
             </div>
         </div>
-
-        <div class="contact-cta">
-            <h3>Une question spécifique ?</h3>
-            <p>Besoin d'un gâteau pour un événement ou une commande personnalisée ?</p>
-            <a href="https://wa.me/33600000000" class="btn-contact-ws">
-                <i class="fab fa-whatsapp"></i> Nous écrire en direct
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <footer class="footer-bottom">
         <img src="mini_logo.png" alt="Small Logo" class="footer-logo">
