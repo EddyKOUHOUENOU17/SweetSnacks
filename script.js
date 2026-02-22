@@ -41,6 +41,7 @@ function sendWhatsApp() {
     }
 
     message += `\n💰 Total : ${total.toFixed(2)}€`;
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/${+2290164603616}?text=${encodeURIComponent(message)}`, '_blank');
 }
+
 
