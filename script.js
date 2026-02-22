@@ -1,4 +1,12 @@
-// Gestion de la transparence du Header au scroll
+// Toggle Menu Mobile
+const menuToggle = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Scroll Effect
 window.onscroll = function() {
     const nav = document.getElementById('main-nav');
     if (window.scrollY > 50) {
@@ -8,7 +16,7 @@ window.onscroll = function() {
     }
 };
 
-// Gestion des quantités
+// Gestion Quantités
 function changeQty(btn, delta) {
     const qtyElement = btn.parentElement.querySelector('.qty-value');
     let currentQty = parseInt(qtyElement.innerText);
@@ -16,10 +24,10 @@ function changeQty(btn, delta) {
     qtyElement.innerText = currentQty;
 }
 
-// Envoi vers WhatsApp
+// WhatsApp
 function sendWhatsApp() {
-    const phoneNumber = "33600000000"; // Ton numéro ici
-    let message = "Bonjour ! J'aimerais commander : \n\n";
+    const phoneNumber = "33600000000"; // Ton numéro
+    let message = "Bonjour The Sweet Snacks ! ✨\nVoici ma commande :\n\n";
     let total = 0;
     let hasItems = false;
 
