@@ -1,12 +1,4 @@
-// Toggle Menu Mobile
-const menuToggle = document.getElementById('mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Scroll Effect
+// Gestion de la transparence du Header au scroll
 window.onscroll = function() {
     const nav = document.getElementById('main-nav');
     if (window.scrollY > 50) {
@@ -16,7 +8,7 @@ window.onscroll = function() {
     }
 };
 
-// Gestion Quantités
+// Gestion des quantités
 function changeQty(btn, delta) {
     const qtyElement = btn.parentElement.querySelector('.qty-value');
     let currentQty = parseInt(qtyElement.innerText);
@@ -24,10 +16,10 @@ function changeQty(btn, delta) {
     qtyElement.innerText = currentQty;
 }
 
-// WhatsApp
+// Envoi vers WhatsApp
 function sendWhatsApp() {
-    const phoneNumber = "0164603616"; // Ton numéro
-    let message = "Bonjour The Sweet Snacks ! ✨\nVoici ma commande :\n\n";
+    const phoneNumber = "33600000000"; // Ton numéro ici
+    let message = "Bonjour ! J'aimerais commander : \n\n";
     let total = 0;
     let hasItems = false;
 
@@ -49,7 +41,5 @@ function sendWhatsApp() {
     }
 
     message += `\n💰 Total : ${total.toFixed(2)}€`;
-    window.open("https://wa.me/2290164603616"?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
-
-
