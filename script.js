@@ -18,7 +18,7 @@ function changeQty(btn, delta) {
 
 // Envoi vers WhatsApp
 function sendWhatsApp() {
-    const phoneNumber = "33600000000"; // Ton numéro ici
+    const phoneNumber = "+2290164603616"; // Ton numéro ici
     let message = "Bonjour ! J'aimerais commander : \n\n";
     let total = 0;
     let hasItems = false;
@@ -43,3 +43,4 @@ function sendWhatsApp() {
     message += `\n💰 Total : ${total.toFixed(2)}€`;
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
+
