@@ -72,6 +72,18 @@ function isWithinBusinessHours() {
     return hour >= 7 && hour < 19;
 }
 
+// récupère un état global dans un fichier modifiable (open/closed)
+async function fetchStatus() {
+    try {
+        const res = await fetch('status.txt', {cache: 'no-store'});
+        if (!res.ok) return 'open';
+        const txt = (await res.text()).trim().toLowerCase();
+        return txt === 'closed' ? 'closed' : 'open';
+    } catch (e) {
+        return 'open';
+    }
+}
+
 function showClosedOverlay() {
     if (document.getElementById('closed-overlay')) return;
     const overlay = document.createElement('div');
@@ -111,8 +123,10 @@ function showClosedOverlay() {
 }
 
 // Exécute la vérification dès le chargement du DOM
-document.addEventListener('DOMContentLoaded', function() {
-    if (!isWithinBusinessHours()) {
+// On combine l'horaire fixe et l'état global du fichier status.txt
+document.addEventListener('DOMContentLoaded', async function() {
+    const status = await fetchStatus();
+    if (status === 'closed' || !isWithinBusinessHours()) {
         showClosedOverlay();
     }
 });
