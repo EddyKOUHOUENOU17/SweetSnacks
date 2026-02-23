@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Vérification des horaires d'ouverture : disponible de 09:00 (inclus) à 19:00 (exclus)
+// Vérification des horaires d'ouverture : disponible de 07:00 (inclus) à 19:00 (exclus)
 function isWithinBusinessHours() {
     const now = new Date();
     const hour = now.getHours();
-    return hour >= 9 && hour < 19;
+    return hour >= 7 && hour < 19;
 }
 
 function showClosedOverlay() {
@@ -81,7 +81,7 @@ function showClosedOverlay() {
     overlay.innerHTML = `
         <div class="closed-overlay__box">
             <h1 class="closed-overlay__title">Nous sommes fermés</h1>
-            <p class="closed-overlay__message">Le site est ouvert chaque jour de <strong>09:00</strong> à <strong>19:00</strong>. Revenez pendant nos horaires d'ouverture pour commander.</p>
+            <p class="closed-overlay__message">Le site est ouvert chaque jour de <strong>07:00</strong> à <strong>19:00</strong>. Revenez pendant nos horaires d'ouverture pour commander.</p>
             <p id="reopen-timer" class="closed-overlay__timer"></p>
         </div>
     `;
