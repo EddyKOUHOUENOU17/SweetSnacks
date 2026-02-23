@@ -18,7 +18,7 @@ function changeQty(btn, delta) {
 
 // Envoi vers WhatsApp
 function sendWhatsApp() {
-    const phoneNumber = "2290164603616"; // Ton numéro ici
+    const phoneNumber = "2290167604447"; // Ton numéro ici
     let message = "Bonjour ! J'aimerais commander : \n\n";
     let total = 0;
     let hasItems = false;
