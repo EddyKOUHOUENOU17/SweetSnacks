@@ -23,16 +23,7 @@ body {
     background: linear-gradient(rgba(251, 230, 236, 0.4), rgba(251, 230, 236, 0.4));
 }
 
-@media (max-width: 768px) {
-    /* mobile: disable the full-page image, let hero gradient serve as backdrop */
-    body {
-        background-image: none;
-    }
-    .hero {
-        /* only gradient overlay on mobile */
-        background: linear-gradient(rgba(251, 230, 236, 0.4), rgba(251, 230, 236, 0.4));
-    }
-}
+
 
 /* --- NAVIGATION RESPONSIVE --- */
 .navbar {
@@ -358,6 +349,7 @@ body {
         transform: none !important;
     }
 }
+
 
 
 
