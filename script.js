@@ -44,3 +44,24 @@ function sendWhatsApp() {
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
+// Toggle du menu mobile (bouton en haut à droite)
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    if (!mobileMenu || !navMenu) return;
+
+    mobileMenu.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+    });
+
+    // Fermer le menu quand on clique sur un lien (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+});
+
