@@ -66,11 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Vérification des horaires d'ouverture : disponible de 07:00 (inclus) à 19:00 (exclus)
-function isWithinBusinessHours() {
-    const now = new Date();
-    const hour = now.getHours();
-    return hour >= 7 && hour < 19;
-}
+
 
 // récupère un état global dans un fichier modifiable (open/closed)
 async function fetchStatus() {
@@ -130,4 +126,5 @@ document.addEventListener('DOMContentLoaded', async function() {
         showClosedOverlay();
     }
 });
+
 
