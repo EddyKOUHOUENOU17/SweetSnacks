@@ -8,15 +8,19 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    /* image background from project root */
-    background-image: url('background.jpeg');
-    /* no solid background-color, image alone is used */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--soft-pink);
     color: var(--dark-brown);
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+/* …plus de règles mobiles concernant le background… */
+
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 0 20px;
+    /* simple gradient background */
+    background: linear-gradient(rgba(251, 230, 236, 0.4), rgba(251, 230, 236, 0.4));
 }
 
 @media (max-width: 768px) {
@@ -354,6 +358,7 @@ body {
         transform: none !important;
     }
 }
+
 
 
 
