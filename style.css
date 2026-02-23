@@ -8,7 +8,12 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: var(--soft-pink);
+    /* image background from project root */
+    background-image: url('background.jpeg');
+    background-color: var(--soft-pink); /* fallback color */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--dark-brown);
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -75,7 +80,11 @@ body {
 .hero {
     height: 100vh; display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 0 20px;
-    background: linear-gradient(rgba(251, 230, 236, 0.4), rgba(251, 230, 236, 0.4));
+    /* gradient overlay on top of the site background image */
+    background: linear-gradient(rgba(251, 230, 236, 0.4), rgba(251, 230, 236, 0.4)),
+                url('background.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .brand-name { 
