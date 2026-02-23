@@ -65,3 +65,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Vérification des horaires d'ouverture : disponible de 09:00 (inclus) à 19:00 (exclus)
+function isWithinBusinessHours() {
+    const now = new Date();
+    const hour = now.getHours();
+    return hour >= 9 && hour < 19;
+}
+
+function showClosedOverlay() {
+    if (document.getElementById('closed-overlay')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'closed-overlay';
+    overlay.className = 'closed-overlay';
+    overlay.setAttribute('aria-hidden', 'false');
+    overlay.innerHTML = `
+        <div class="closed-overlay__box">
+            <h1 class="closed-overlay__title">Nous sommes fermés</h1>
+            <p class="closed-overlay__message">Le site est ouvert chaque jour de <strong>09:00</strong> à <strong>19:00</strong>. Revenez pendant nos horaires d'ouverture pour commander.</p>
+            <p id="reopen-timer" class="closed-overlay__timer"></p>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    const now = new Date();
+    let nextOpen = new Date(now);
+    nextOpen.setHours(9,0,0,0);
+    if (now.getHours() >= 9) {
+        nextOpen.setDate(nextOpen.getDate() + 1);
+    }
+
+    const timerEl = document.getElementById('reopen-timer');
+    function updateTimer() {
+        const diff = nextOpen - new Date();
+        if (diff <= 0) {
+            window.location.reload();
+            return;
+        }
+        const hrs = Math.floor(diff / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        timerEl.textContent = `Réouverture dans ${hrs}h ${mins}m ${secs}s`;
+        setTimeout(updateTimer, 1000);
+    }
+    updateTimer();
+}
+
+// Exécute la vérification dès le chargement du DOM
+document.addEventListener('DOMContentLoaded', function() {
+    if (!isWithinBusinessHours()) {
+        showClosedOverlay();
+    }
+});
+
